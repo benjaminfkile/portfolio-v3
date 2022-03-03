@@ -1,0 +1,64 @@
+.MobileMenuMenuBtn {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    height: 50px;
+    width: 50px;
+    border-radius: 8px;
+    -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.MobileMenuMenuBtn svg {
+    width: 45px;
+    height: 45px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+#mobile-menu-menu-btn-dark {
+    background-color: #111111;
+    color: #515152;
+}
+
+.MobileMenuContent {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    padding-bottom: 3px;
+    border-bottom-left-radius: 5px;
+}
+
+.MobileMenuContent a {
+    text-decoration: none;
+}
+
+#mobile-menu-content-dark {
+    background-color: #181818;
+}
+
+.MobileMenuContentRoute {
+    display: flex;
+    justify-content: center;
+    /* width: 80px; */
+    height: 50px;
+    margin: 3px;
+    margin-bottom: 0px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.MobileMenuRouteBtn p {
+    font-size: 30px;
+    margin-top: 7px;
+    font-weight: 600;
+}
+
+#mobile-menu-content-dark .MobileMenuContentRoute {
+    background-color: #1d1d1d;
+}
+
+#mobile-menu-content-dark p {
+    color: #515152;
+}
