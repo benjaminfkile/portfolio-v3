@@ -1,11 +1,24 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import io from "socket.io-client"
 import Menu from "./MobileMenu/MobileMenu"
 import { Route, Switch } from "react-router-dom"
 import Skills from "./Pages/Skills/Skills"
 import About from "./Pages/About/About"
 import "./App.css"
 
+
+
 const App = () => {
+
+  const socket = io("http://localhost:8000", {
+    path: "/"
+  })
+
+  socket.on('message', data => {
+	  if (data) {
+	  	console.log(data);
+	  }
+	})
 
   const [theme, setTheme] = useState("dark")
 

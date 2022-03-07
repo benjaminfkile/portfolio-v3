@@ -14,6 +14,8 @@ const About: FunctionComponent<AboutProps> = (props: AboutProps) => {
     const theme = useSelector((state: any) => state.themeSlice.theme)
     const dispatch = useDispatch()
 
+    
+
     console.log(theme)
 
     return (

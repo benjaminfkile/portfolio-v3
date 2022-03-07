@@ -14,7 +14,6 @@ interface JelloTextCharTypes {
     id: string
     value?: string | null
     display?: string
-
 }
 
 interface JelloTextState {
