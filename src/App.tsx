@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from "react"
-import Menu from "./MobileMenu/MobileMenu"
+import { useContext, useEffect  } from "react"
 import { Route, Switch } from "react-router-dom"
-import Skills from "./Pages/Skills/Skills"
 import About from "./Pages/About/About"
 import { SocketContext } from "./Context/socket"
 import { useDispatch, useSelector } from "react-redux"
 import { setTheme } from "./Redux/Slices/themeSlice"
 import "./App.css"
 import EditTheme from "./Utilis/JelloText/EditTheme/EditTheme"
+
+
 
 const App = () => {
   const theme = useSelector((state: any) => state.themeSlice.theme)
@@ -20,7 +20,7 @@ const App = () => {
       dispatch(setTheme(theme))
     })
 
-  }, []);
+  }, [dispatch, socket]);
 
   return (
     <div className="App" style={{"backgroundColor": theme.PalleteColor4}}>

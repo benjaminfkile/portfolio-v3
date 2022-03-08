@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react"
-import { useSelector, useDispatch, DefaultRootState } from "react-redux"
+import { useSelector } from "react-redux"
 import JelloText from "../../Utilis/JelloText/JelloText"
 import "./About.css"
 
