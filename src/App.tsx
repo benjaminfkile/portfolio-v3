@@ -1,52 +1,40 @@
-import { useEffect, useState } from "react"
-import io from "socket.io-client"
+import { useContext, useEffect, useState } from "react"
 import Menu from "./MobileMenu/MobileMenu"
 import { Route, Switch } from "react-router-dom"
 import Skills from "./Pages/Skills/Skills"
 import About from "./Pages/About/About"
+import { SocketContext } from "./Context/socket"
+import { useDispatch, useSelector } from "react-redux"
+import { setTheme } from "./Redux/Slices/themeSlice"
 import "./App.css"
 
-
-
 const App = () => {
+  const theme = useSelector((state: any) => state.themeSlice.theme)
+  const dispatch = useDispatch()
+  const socket = useContext(SocketContext)
+  
+  useEffect(() => {
+    socket.on("theme", (theme: any) => {
+      dispatch(setTheme(theme))
+    })
 
-  const socket = io("http://localhost:8000", {
-    path: "/"
-  })
-
-  socket.on('message', data => {
-	  if (data) {
-	  	console.log(data);
-	  }
-	})
-
-  const [theme, setTheme] = useState("dark")
-
-  const toggleTheme = () => {
-    if (theme === "dark") {
-      setTheme("light")
-    } else {
-      setTheme("dark")
-    }
-  }
+  }, []);
 
   return (
-    <div className={`App-${theme}`}>
-      <Menu
+    <div className="App" style={{"backgroundColor": theme.PalleteColor4}}>
+      {/* <Menu
         theme={theme}
         toggleTheme={toggleTheme}
-      />
+      /> */}
       <div className="Content">
         <Switch>
           <Route
             exact path="/"
             render={() =>
-              <About
-                theme={theme}
-              />
+              <About/>
             }
           />
-          <Route
+          {/* <Route
             path="/about"
             render={() =>
               <About
@@ -59,7 +47,7 @@ const App = () => {
             render={() => <Skills
               theme={theme}
             />}
-          />
+          /> */}
         </Switch>
       </div>
     </div>

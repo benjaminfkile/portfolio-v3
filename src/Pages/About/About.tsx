@@ -1,22 +1,15 @@
 import { FunctionComponent } from "react"
 import { useSelector, useDispatch, DefaultRootState } from "react-redux"
-import { setTheme } from '../../Redux/Slices/themeSlice'
-import { Charcoal } from "../../Pallettes/Charcoal"
 import JelloText from "../../Utilis/JelloText/JelloText"
 import "./About.css"
-import { RetroPunch } from "../../Pallettes/RetroPunch"
 
 interface AboutProps {
-    theme: string
 }
 
 const About: FunctionComponent<AboutProps> = (props: AboutProps) => {
     const theme = useSelector((state: any) => state.themeSlice.theme)
-    const dispatch = useDispatch()
 
-    
 
-    console.log(theme)
 
     return (
         <div className="About">
@@ -29,7 +22,7 @@ const About: FunctionComponent<AboutProps> = (props: AboutProps) => {
                     animationSpeed={75}
                 />
             </div>
-            <div onClick={() => dispatch(setTheme(RetroPunch))}>set theme</div>
+            {/* <div onClick={() => }>set theme</div> */}
         </div>
     )
 }
