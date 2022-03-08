@@ -7,6 +7,7 @@ import { SocketContext } from "./Context/socket"
 import { useDispatch, useSelector } from "react-redux"
 import { setTheme } from "./Redux/Slices/themeSlice"
 import "./App.css"
+import EditTheme from "./Utilis/JelloText/EditTheme/EditTheme"
 
 const App = () => {
   const theme = useSelector((state: any) => state.themeSlice.theme)
@@ -15,6 +16,7 @@ const App = () => {
   
   useEffect(() => {
     socket.on("theme", (theme: any) => {
+      console.log("setting theme")
       dispatch(setTheme(theme))
     })
 
@@ -49,6 +51,7 @@ const App = () => {
             />}
           /> */}
         </Switch>
+        <EditTheme/>
       </div>
     </div>
   )

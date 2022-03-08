@@ -8,19 +8,17 @@ interface AboutProps {
 
 const About: FunctionComponent<AboutProps> = (props: AboutProps) => {
     const theme = useSelector((state: any) => state.themeSlice.theme)
-
-
-
     return (
         <div className="About">
             <div className="AboutHeader">
                 <JelloText
-                    text="About Me"
+                    text="Test"
                     fontSize={50}
                     whiteSpacing="8px"
                     color={theme.PalleteColor1}
                     animationSpeed={75}
                 />
+
             </div>
             {/* <div onClick={() => }>set theme</div> */}
         </div>
