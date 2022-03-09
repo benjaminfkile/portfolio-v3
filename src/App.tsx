@@ -5,9 +5,7 @@ import { SocketContext } from "./Context/socket"
 import { useDispatch, useSelector } from "react-redux"
 import { setTheme } from "./Redux/Slices/themeSlice"
 import "./App.css"
-import EditTheme from "./Utilis/JelloText/EditTheme/EditTheme"
-
-
+import EditTheme from "./Utilis/EditTheme/EditTheme"
 
 const App = () => {
   const theme = useSelector((state: any) => state.themeSlice.theme)
@@ -23,36 +21,14 @@ const App = () => {
   }, [dispatch, socket]);
 
   return (
-    <div className="App" style={{"backgroundColor": theme.PalleteColor4}}>
-      {/* <Menu
-        theme={theme}
-        toggleTheme={toggleTheme}
-      /> */}
-      <div className="Content">
+    <div className="App" style={{"backgroundColor": theme.PalleteColor1}}>
         <Switch>
           <Route
             exact path="/"
-            render={() =>
-              <About/>
-            }
+            render={() => <About/>}
           />
-          {/* <Route
-            path="/about"
-            render={() =>
-              <About
-                theme={theme}
-              />
-            }
-          />
-          <Route
-            path="/skills"
-            render={() => <Skills
-              theme={theme}
-            />}
-          /> */}
         </Switch>
         <EditTheme/>
-      </div>
     </div>
   )
 }
