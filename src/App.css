@@ -21,7 +21,6 @@ html, body {
   display: flex;
   width: 100%;
   justify-content: left;
-  margin: 5px;
 }
 
 .TestPalletBoxLG{
@@ -38,10 +37,12 @@ html, body {
   margin: 5px;
 }
 
-.TestPalletBoxSM{
-  width: 100px;
-  height: 100px;
+.TestPalletBoxSM {
   border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 5px;
 }
 
 /*Animations*/
