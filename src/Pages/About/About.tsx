@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react"
 import { useSelector } from "react-redux"
-import JelloText from "../../Utilis/JelloText/JelloText"
+// import JelloText from "../../Utilis/JelloText/JelloText"
 import "./About.css"
 
 const About: FunctionComponent = () => {
