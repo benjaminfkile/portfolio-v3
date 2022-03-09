@@ -8,11 +8,15 @@ const EditTheme: FunctionComponent = () => {
     const colorSlots = ["PalleteColor1", "PalleteColor2", "PalleteColor3", "PalleteColor4"]
     const theme = useSelector((state: any) => state.themeSlice.theme)
     const socket = useContext(SocketContext)
+    let timeout: any
 
     const handleColorChange = (color: string, index: number) => {
-        let updatedTheme = JSON.parse(JSON.stringify(theme))
-        updatedTheme[colorSlots[index]] = color
-        socket.emit("theme", updatedTheme)
+        clearTimeout(timeout)
+        timeout = setTimeout(() => {
+            let updatedTheme = JSON.parse(JSON.stringify(theme))
+            updatedTheme[colorSlots[index]] = color
+            socket.emit("theme", updatedTheme)
+        }, 100);
     }
 
     return (
