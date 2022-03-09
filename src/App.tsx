@@ -1,4 +1,4 @@
-import { useContext, useEffect  } from "react"
+import { useContext, useEffect } from "react"
 import { Route, Switch } from "react-router-dom"
 import About from "./Pages/About/About"
 import { SocketContext } from "./Context/socket"
@@ -11,7 +11,7 @@ const App = () => {
   const theme = useSelector((state: any) => state.themeSlice.theme)
   const dispatch = useDispatch()
   const socket = useContext(SocketContext)
-  
+
   useEffect(() => {
     socket.on("theme", (theme: any) => {
       dispatch(setTheme(theme))
@@ -21,14 +21,14 @@ const App = () => {
   }, [dispatch, socket]);
 
   return (
-    <div className="App" style={{"backgroundColor": theme.PalleteColor1}}>
-        <Switch>
-          <Route
-            exact path="/"
-            render={() => <About/>}
-          />
-        </Switch>
-        <EditTheme/>
+    <div className="App" style={{ "backgroundColor": theme.PalleteColor1 }}>
+      <Switch>
+        <Route
+          exact path="/"
+          render={() => <About />}
+        />
+      </Switch>
+      <EditTheme />
     </div>
   )
 }

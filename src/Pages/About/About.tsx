@@ -28,6 +28,11 @@ const About: FunctionComponent = () => {
                     color={theme.PalleteColor4}
                     animationSpeed={75}
                 />
+                <div className="TestPalletBoxes">
+                    <div className="TestPalletBoxLG" style={{ "backgroundColor": theme.PalleteColor2 }}></div>
+                    <div className="TestPalletBoxMD" style={{ "backgroundColor": theme.PalleteColor3 }}></div>
+                    <div className="TestPalletBoxSM" style={{ "backgroundColor": theme.PalleteColor4 }}></div>
+                </div>
             </div>
         </div>
     )
