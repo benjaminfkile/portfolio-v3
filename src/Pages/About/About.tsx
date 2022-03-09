@@ -9,20 +9,20 @@ const About: FunctionComponent = () => {
         <div className="About">
             <div className="AboutHeader">
                 <JelloText
-                    text="slot 2"
+                    text="Heading 1"
                     fontSize={50}
                     whiteSpacing="8px"
                     color={theme.PalleteColor2}
                     animationSpeed={75}
                 />
                 <JelloText
-                    text="slot 3"
+                    text="Heading 2"
                     fontSize={30}
                     whiteSpacing="8px"
                     color={theme.PalleteColor3}
                     animationSpeed={75}
                 />                <JelloText
-                    text="slot 4"
+                    text="text"
                     fontSize={20}
                     whiteSpacing="8px"
                     color={theme.PalleteColor4}
