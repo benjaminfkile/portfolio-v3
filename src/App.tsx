@@ -14,8 +14,8 @@ const App = () => {
   
   useEffect(() => {
     socket.on("theme", (theme: any) => {
-      console.log("setting theme")
       dispatch(setTheme(theme))
+      // console.log(theme)
     })
 
   }, [dispatch, socket]);
