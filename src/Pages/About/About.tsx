@@ -9,7 +9,7 @@ const About: FunctionComponent = () => {
         <div className="About">
             <div className="AboutHeader">
             <div className="TestPalletBoxLG" style={{ "backgroundColor": theme.PalleteColor2 }}></div>
-                <JelloText
+                {/* <JelloText
                     text="Heading 2"
                     fontSize={50}
                     whiteSpacing="8px"
@@ -21,7 +21,7 @@ const About: FunctionComponent = () => {
                     whiteSpacing="8px"
                     color={theme.PalleteColor4}
                     animationSpeed={75}
-                />
+                /> */}
                 <div className="TestPalletBoxes">
                     <div className="TestPalletBoxMD" style={{ "backgroundColor": theme.PalleteColor3 }}></div>
                     <div className="TestPalletBoxSM" style={{ "backgroundColor": theme.PalleteColor4 }}></div>
