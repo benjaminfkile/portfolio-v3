@@ -4,8 +4,8 @@ import About from "./Pages/About/About"
 import { SocketContext } from "./Context/socket"
 import { useDispatch, useSelector } from "react-redux"
 import { setTheme } from "./Redux/Slices/themeSlice"
-import "./App.css"
 import EditTheme from "./Utilis/EditTheme/EditTheme"
+import "./App.css"
 
 const App = () => {
   const theme = useSelector((state: any) => state.themeSlice.theme)
@@ -15,10 +15,10 @@ const App = () => {
   useEffect(() => {
     socket.on("theme", (theme: any) => {
       dispatch(setTheme(theme))
-      // console.log(theme)
+      console.log(theme)
     })
 
-  }, [dispatch, socket]);
+  }, [dispatch, socket])
 
   return (
     <div className="App" style={{ "backgroundColor": theme.PalleteColor1 }}>
